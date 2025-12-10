@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>此網域已經遭到封鎖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* 全局設定 */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+        "Helvetica Neue", Arial, sans-serif;
+      background: #e9e9e9;
+      color: #222;
+    }
+
+    /* 外層排版：桌機左右兩欄、手機上下排列 */
+    .layout {
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* 左側紅色欄位（桌機版） */
+    .side-banner {
+      background: #c82424;
+      color: #ffffff;
+      width: 270px;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .banner-text-zh {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+    }
+
+    .banner-text-en {
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      opacity: 0.95;
+    }
+
+    /* 右側內容卡片 */
+    .content {
+      flex: 1;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      max-width: 720px;
+      width: 100%;
+      border: 1px solid #d0d0d0;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      padding: 1.8rem 1.6rem 1.6rem;
+    }
+
+    /* 鎖頭 + 說明 */
+    .icon-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .icon-circle {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #fbeaea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    .icon-text .strong-line {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.3rem;
+    }
+
+    .icon-text .sub-line {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #666666;
+    }
+
+    /* 案件資訊 */
+    .info-block {
+      border-top: 1px solid #e3e3e3;
+      border-bottom: 1px solid #e3e3e3;
+      padding: 0.9rem 0;
+      margin-bottom: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0.12rem 0;
+    }
+
+    .info-row .label {
+      width: 6.2rem;
+      color: #555555;
+    }
+
+    .info-row .value {
+      flex: 1;
+      font-weight: 500;
+    }
+
+    /* 說明文字 */
+    .notice {
+      font-size: 0.9rem;
+      color: #444444;
+      line-height: 1.6;
+      margin-bottom: 1.3rem;
+    }
+
+    .notice .en {
+      font-size: 0.8rem;
+      color: #777777;
+      margin-top: 0.35rem;
+    }
+
+    /* 按鈕 */
+    .cta {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.8rem;
+      border-radius: 999px;
+      background: #0066cc;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      transition: background 0.15s ease, transform 0.1s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: #004c99;
+      transform: translateY(-1px);
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      font-size: 0.75rem;
+      color: #999999;
+      border-top: 1px dashed #e0e0e0;
+      padding-top: 0.6rem;
+      line-height: 1.4;
+    }
+
+    /* 手機版 RWD：紅色欄位改成上方橫條 */
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .side-banner {
+        width: 100%;
+        padding: 0.85rem 0.75rem;
+        text-align: center;
+        align-items: center;
+      }
+
+      .banner-text-zh {
+        font-size: 1.15rem;
+      }
+
+      .banner-text-en {
+        font-size: 0.78rem;
+      }
+
+      .content {
+        padding: 1rem 0.6rem 1.5rem;
+        align-items: flex-start;
+      }
+
+      .card {
+        box-shadow: none;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+      }
+
+      .icon-row {
+        align-items: flex-start;
+      }
+
+      .icon-circle {
+        width: 46px;
+        height: 46px;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <!-- 左側紅色欄位／手機時變成上方橫條 -->
+    <aside class="side-banner">
+      <div class="banner-text-zh">此網域已經遭到封鎖</div>
+      <div class="banner-text-en">This Domain Name Has Been Blocked</div>
+    </aside>
+
+    <!-- 右側內容卡片 -->
+    <div class="content">
+      <main class="card">
+        <section class="icon-row">
+          <div class="icon-circle">🔒</div>
+          <div class="icon-text">
+            <p class="strong-line">
+              依據相關網路安全及通訊監理規定，本網域已被強制屏蔽。
+            </p>
+            <p class="sub-line">
+              According to relevant cybersecurity and regulatory policies, access to this domain has been restricted.
+            </p>
+          </div>
+        </section>
+
+        <section class="info-block">
+          <div class="info-row">
+            <span class="label">案件編號：</span>
+            <span class="value">114514</span>
+          </div>
+          <div class="info-row">
+            <span class="label">封鎖類型：</span>
+            <span class="value">疑似違反相關規定之網站</span>
+          </div>
+          <div class="info-row">
+            <span class="label">執行單位：</span>
+            <span class="value">網路內容監理單位（示意）</span>
+          </div>
+          <div class="info-row">
+            <span class="label">生效時間：</span>
+            <span class="value">2025-02-12 14:22（UTC+8）</span>
+          </div>
+        </section>
+
+        <section class="notice">
+          <p>
+            若您對本次封鎖行為有任何疑問，請洽詢相關主管機關或服務提供者。
+          </p>
+          <p class="en">
+            If you believe this blocking is in error, please contact your service provider or the relevant authority.
+          </p>
+        </section>
+
+        <section class="cta">
+          <a href="https://langcheng.notion.site/donate" class="btn">
+            我只是路過，帶我離開這裡
+          </a>
+        </section>
+
+        <section class="disclaimer">
+          ⚠ 本頁面為惡搞示意，僅供練習與展示用途，與任何實際機關或案件無關。<br />
+          ⚠ This page is a parody mock-up for demo purposes only and is not related to any real authority or case.
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
